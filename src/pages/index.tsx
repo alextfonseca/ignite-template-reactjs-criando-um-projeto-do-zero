@@ -1,21 +1,18 @@
 import { AiOutlineCalendar } from 'react-icons/ai';
-
 import { AiOutlineUser } from 'react-icons/ai';
-
 import { GetStaticProps } from 'next';
 
 import { getPrismicClient } from '../services/prismic';
 import Prismic from '@prismicio/client';
-import { RichText } from 'prismic-dom';
-
-import Link from 'next/link';
-
-import commonStyles from '../styles/common.module.scss';
-import styles from './home.module.scss';
-import { useState } from 'react';
 
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+
+import Link from 'next/link';
+import { useState } from 'react';
+
+import commonStyles from '../styles/common.module.scss';
+import styles from './home.module.scss';
 
 interface Post {
   uid?: string;
@@ -79,7 +76,7 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
             };
           });
 
-          setPosts([...newPost, ...posts]);
+          setPosts([...posts, ...newPost]);
           setNextPage(post.next_page);
         });
     } else {
@@ -124,7 +121,7 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
   );
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient();
   const postsResponse = await prismic.query(
     [Prismic.predicates.at('document.type', 'posts')],

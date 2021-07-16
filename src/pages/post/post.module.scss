@@ -1,0 +1,46 @@
+.banner {
+  width: 100%;
+}
+
+.header {
+  margin-top: 5rem;
+
+  h1 {
+    font: 700 3rem 'Inter', sans-serif;
+    color: var(--heading);
+  }
+
+  .infoPost {
+    margin-top: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .data,
+    .author,
+    .readTime {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      font: 400 0.875rem 'Inter', sans-serif;
+      color: var(--info);
+    }
+  }
+}
+
+.contentPost {
+  h2 {
+    margin-top: 3rem;
+    font: 900 2.25rem 'Inter', sans-serif;
+    color: var(--heading);
+  }
+
+  .content {
+    margin-top: 3rem;
+    font: 400 1.125rem 'Inter', sans-serif;
+    color: var(--body);
+    line-height: 140%;
+  }
+}
