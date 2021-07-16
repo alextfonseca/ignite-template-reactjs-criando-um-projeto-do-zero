@@ -1,1 +1,52 @@
-// TODO
+.post {
+  h1 {
+    font: 700 1.75rem 'Inter', sans-serif;
+    color: var(--heading);
+
+    transition: color 0.2s;
+  }
+
+  p {
+    margin-top: 0.5rem;
+
+    font: 400 1.125rem 'Inter', sans-serif;
+    line-height: 1.361rem;
+    color: var(--body);
+  }
+
+  .infoPost {
+    display: flex;
+    gap: 1.5rem;
+
+    margin-top: 1.5rem;
+
+    font: 400 0.875rem 'Inter', sans-serif;
+
+    .dataPost,
+    .authorPost {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+
+  & + .post {
+    margin-top: 3rem;
+  }
+
+  &:hover h1 {
+    color: var(--highlight);
+  }
+}
+
+.morePostsActive {
+  display: block;
+  margin-top: 4rem;
+
+  color: var(--highlight);
+  background: transparent;
+  border: none;
+}
+
+.morePosts {
+  display: none;
+}
